@@ -5,23 +5,29 @@ from musicblog.models import SongPost, Genre
 
 def chill(request):
     recent_songposts = get_recent_songposts('Chill', 10)
-    return HttpResponse("You're looking at the Chill posts.")
+    context = {'genre': "Chill", 'short_genre': 'chill', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
 
 def funky(request):
     recent_songposts = get_recent_songposts('Funky', 10)
-    return HttpResponse("You're looking at the Funky posts.")
+    context = {'genre': "Funky", 'short_genre': 'funky', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
 
 def indie(request):
     recent_songposts = get_recent_songposts('Indie', 10)
-    return HttpResponse("You're looking at the Indie/Alternative posts.")
+    context = {'genre': "Indie/Alternative", 'short_genre': 'indie', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
 
 def rap(request):
     recent_songposts = get_recent_songposts('Rap', 10)
-    return HttpResponse("You're looking at the Rap posts.")
+    context = {'genre': "Rap", 'short_genre': 'rap', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
+
 
 def party(request):
     recent_songposts = get_recent_songposts('Party', 10)
-    return HttpResponse("You're looking at the Party posts.")
+    context = {'genre': "Party", 'short_genre': 'party', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
 
 def get_recent_songposts(genre, num_posts_to_grab):
     g = Genre.objects.get(genre_name__contains=genre)
