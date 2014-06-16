@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -37,7 +38,7 @@ def all_music(request):
 def get_recent_songposts(genre, num_posts_to_grab):
     if genre != 'All':
         g = Genre.objects.get(genre_name__contains=genre)
-        recent_songposts = g.songpost_set.all().order_by('-created_on')[:num_posts_to_grab]
+        recent_songposts = g.songpost_set.filter(created_on__lte=timezone.now()).order_by('-created_on')[:num_posts_to_grab]
     else:
         recent_songposts = SongPost.objects.all().order_by('-created_on')[:num_posts_to_grab]
     return recent_songposts
