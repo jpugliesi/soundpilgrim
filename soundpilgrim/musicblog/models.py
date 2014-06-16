@@ -1,4 +1,5 @@
 from django.db import models
+import re
 
 class SongCarousel(models.Model):
     song_carousel_title = models.CharField(max_length=200)
@@ -25,5 +26,28 @@ class SongPost(models.Model):
     is_in_song_carousel.boolean = True
     is_in_song_carousel.short_description = 'In Song Carousel?'
 
+    def save(self, *args, **kwargs):
+        self.soundcloud_url = soundcloud_url = clean_soundcloud_url(self.soundcloud_url)
+        super(SongPost, self).save(*args, **kwargs)
+
     def __unicode__(self):
-        return self.song_title + ' ' + self.artist + ' (' + unicode(self.genre) + ')'
+        return self.song_title + ' - ' + self.artist + ' (' + unicode(self.genre) + ')'
+
+# Helper functions
+
+def clean_soundcloud_url(old_soundcloud_url):
+
+    iframe_start = '<iframe width="100%" height="100%" scrolling="no" frameborder="no" src="'
+    iframe_end = '&amp;auto_play=false&amp;hide_related=true&amp;show_user=false&amp;show_comments=false&amp;visual=true"></iframe>'
+
+
+    url_segment = re.search(r'src="(.+?)&amp', old_soundcloud_url)
+    
+    new_soundcloud_url = ""
+    if url_segment:
+
+        new_soundcloud_url = iframe_start + url_segment.group(1) + iframe_end
+    else:
+        new_soundcloud_url = ""
+
+    return new_soundcloud_url 
