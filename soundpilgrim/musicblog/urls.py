@@ -8,5 +8,5 @@ urlpatterns = patterns('',
     url(r'^indie/', views.indie, name='indie'),
     url(r'^rap/', views.rap, name='rap'),
     url(r'^party/', views.party, name='party'),
-    url(r'^all/', views.all_music, name='all_music'),
+    url(r'^$', views.all_music, name='all_music'),
 )
