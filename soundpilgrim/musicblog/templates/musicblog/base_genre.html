@@ -23,7 +23,7 @@
 	<div class="genre_color">
 	</div>
 	<div class="post_music 12u">
-		<iframe width="100%" height="100%" scrolling="no" frameborder="no" src="{{ post.soundcloud_url }}&amp;auto_play=false&amp;hide_related=true&amp;show_user=false&amp;show_comments=false&amp;visual=true"></iframe>
+		{{ post.soundcloud_url|safe }}
 	</div>	
 </div>	
 

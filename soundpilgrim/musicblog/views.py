@@ -15,7 +15,7 @@ def funky(request):
 
 def indie(request):
     recent_songposts = get_recent_songposts('Indie', 10)
-    context = {'genre': "Indie/Alternative", 'short_genre': 'indie', 'recent_songposts': recent_songposts}
+    context = {'genre': "Indie & Alternative", 'short_genre': 'indie', 'recent_songposts': recent_songposts}
     return render(request, 'musicblog/base_genre.html', context)
 
 def rap(request):
@@ -29,7 +29,15 @@ def party(request):
     context = {'genre': "Party", 'short_genre': 'party', 'recent_songposts': recent_songposts}
     return render(request, 'musicblog/base_genre.html', context)
 
+def all_music(request):
+    recent_songposts = get_recent_songposts('All', 10)
+    context = {'genre': "All Music", 'short_genre': 'chill', 'recent_songposts': recent_songposts}
+    return render(request, 'musicblog/base_genre.html', context)
+
 def get_recent_songposts(genre, num_posts_to_grab):
-    g = Genre.objects.get(genre_name__contains=genre)
-    recent_songposts = g.songpost_set.all().order_by('-created_on')[:num_posts_to_grab]
+    if genre != 'All':
+        g = Genre.objects.get(genre_name__contains=genre)
+        recent_songposts = g.songpost_set.all().order_by('-created_on')[:num_posts_to_grab]
+    else:
+        recent_songposts = SongPost.objects.all().order_by('-created_on')[:num_posts_to_grab]
     return recent_songposts
