@@ -1729,7 +1729,7 @@
 
 }
 
-/********* Feed Page ************/
+/********* Feed Pages ************/
 
 .party #nav{
 	color: #fff;
@@ -1776,6 +1776,15 @@
 	background-position: center center;
 	background-attachment: fixed;
 
+}
+
+.all_music #nav{
+	color: #fff;
+	position: relative;
+	background-image: url('../images/bluegrey.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
 }
 
 .feedPage #nav #genres > li{
@@ -1830,6 +1839,12 @@
 	}
 	.rap .genre_color{
 		background-image: url('../images/rap.jpg');
+		background-size: 100% auto;
+		height: .5em;
+	}
+
+	.all_music .genre_color{
+		background-image: url('../images/bluegrey.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}

@@ -31,7 +31,7 @@ def party(request):
 
 def all_music(request):
     recent_songposts = get_recent_songposts('All', 10)
-    context = {'genre': "All Music", 'short_genre': 'chill', 'recent_songposts': recent_songposts}
+    context = {'genre': "All Music", 'short_genre': 'all_music', 'recent_songposts': recent_songposts}
     return render(request, 'musicblog/base_genre.html', context)
 
 def get_recent_songposts(genre, num_posts_to_grab):
