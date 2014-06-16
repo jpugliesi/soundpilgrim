@@ -27,8 +27,12 @@ class SongPost(models.Model):
     is_in_song_carousel.short_description = 'In Song Carousel?'
 
     def save(self, *args, **kwargs):
-        self.soundcloud_url = soundcloud_url = clean_soundcloud_url(self.soundcloud_url)
+        self.full_clean()
         super(SongPost, self).save(*args, **kwargs)
+
+    def clean(self, *args, **kwargs):
+        self.soundcloud_url = clean_soundcloud_url(self.soundcloud_url)
+        super(SongPost, self).clean(*args, **kwargs)
 
     def __unicode__(self):
         return self.song_title + ' - ' + self.artist + ' (' + unicode(self.genre) + ')'
