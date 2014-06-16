@@ -10,7 +10,7 @@
 
 <div class="inner">
 	<header>
-		<span class="dailyQuote">"Fear is you imagining the worst possible outcome"</span>
+	    <span class="dailyQuote">"{{ recent_quote.text }}" - {{ recent_quote.quoter }}</span>
 	</header>
 	<footer>
 		<a href="#welcome" class="button circled moreButton">More</a>
@@ -30,7 +30,7 @@
 			Enjoy browsing through some inspirational, motivational, and insightful quotes 
 	</p>
 	<footer>
-		<a href="#quotes" id="continueReading" class="button">Continue Reading</a>
+	    <a href="{% url 'quotes:quotes' %}" id="continueReading" class="button">Continue Reading</a>
 	</footer>
 
 	
