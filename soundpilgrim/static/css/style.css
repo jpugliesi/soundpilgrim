@@ -74,8 +74,7 @@
 	{
 		display: block;
 		font-size: 1.5em;
-		margin-top: 3em;
-		margin-bottom: 4em;
+		margin: 3em 2em 3em 2em;
 		line-height: 1.5em;
 	}
 
@@ -524,7 +523,7 @@
 		{
 			position: relative;
 			display: inline-block;
-			background: #df7366;
+			background: #637E79;
 			color: #fff;
 			text-align: center;
 			border-radius: 0.5em;
@@ -538,7 +537,7 @@
 			.button:hover
 			{
 				color: #fff;
-				background: #ef8376;
+				background: #77928B;
 			}
 			
 			.button:active
@@ -1380,6 +1379,7 @@
 
 	#welcome p{
 		text-align: center;
+		margin-bottom: 3em;
 	}
 
 /*********************************************************************************/

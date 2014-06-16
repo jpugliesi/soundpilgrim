@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome{% endblock title %}
+
+{% block body_classes %}homepage{% endblock body_classes %}
+
+{% block header_id %}header{% endblock header_id %}
+
+{% block inner_nav %}
+
+<div class="inner">
+	<header>
+		<span class="dailyQuote">"Fear is you imagining the worst possible outcome"</span>
+	</header>
+	<footer>
+		<a href="#welcome" class="button circled moreButton">More</a>
+	</footer>
+</div>
+
+{% endblock inner_nav %}
+
+{% block body_content %}
+
+<div id="welcome">
+	<h2>Welcome To <strong>Sound Pilgrim</strong>.</h2>
+	<span class="byline">
+		Sound Pilgrim gives you access to amazing music through a beautifully simplistic experience.  Long posts littered with text have no place here...  We prefer to let the music speak for itself.  At Sound Pilgrim, we only have one rule:  If we like it, we'll post it.  Because good music is worth your time.
+	</span>
+	<p>
+			Enjoy browsing through some inspirational, motivational, and insightful quotes 
+	</p>
+	<footer>
+		<a href="#quotes" id="continueReading" class="button">Continue Reading</a>
+	</footer>
+
+	
+</div>
+
+{% endblock body_content %}
