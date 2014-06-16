@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Quotes{% endblock title %}
+
+{% block body_classes %}no-sidebar quotes feedPage{% endblock body_classes %}
+
+{% block header_id %}feedHeader{% endblock header_id %}
+
+{% block body_content %}
+
+<div id="quotes" class="wrapper style2">
+	<article id="main" class="container special">
+
+{% if recent_quotes %}
+{% for quote in recent_quotes %}
+
+<div>
+    <h2><a>{{ quote.text }}</a></h2>
+    <span id="who">- {{ quote.quoter }}</span>
+</div>
+
+{% endfor %}
+{% else %}
+    <h2>Looks like there aren't any quotes...</h2>
+{% endif %}
+
+
+	</article>
+</div>
+
+{% endblock body_content %}

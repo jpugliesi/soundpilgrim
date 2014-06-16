@@ -1787,6 +1787,16 @@
 	background-attachment: fixed;
 }
 
+.quotes #nav{
+	color: #fff;
+	position: relative;
+	background-image: url('../images/bluegrey.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+
+}
+
 .feedPage #nav #genres > li{
 	margin: 0;
 
