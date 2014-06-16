@@ -3,7 +3,7 @@ from musicblog.forms import SongPostForm
 from musicblog.models import SongPost, SongCarousel, Genre
 
 class SongPostAdmin(admin.ModelAdmin):
-    fields = ['created_on', 'song_title', 'artist', 'genre', 'soundcloud_url', 'song_carousel']
+    fields = ['created_on', 'song_title', 'artist', 'genre', 'soundcloud_url']
     list_display = ('song_title', 'artist', 'genre', 'created_on')
     list_filter = ['created_on']
 
