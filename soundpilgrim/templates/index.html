@@ -10,7 +10,10 @@
 
 <div class="inner">
 	<header>
-	    <span class="dailyQuote">"{{ recent_quote.text }}" - {{ recent_quote.quoter }}</span>
+	{% if recent_quote %}
+	    <span class="dailyQuote">"{{ recent_quote.text }}"</span>
+	    <span class="dailyQuote">- {{ recent_quote.quoter }}</span>
+	{% endif %}
 	</header>
 	<footer>
 		<a href="#welcome" class="button circled moreButton">More</a>
