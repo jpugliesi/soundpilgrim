@@ -20,14 +20,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'gmyhw=l^o0&mlaw2#964pms&&d)bec8em54&n%$=m%&7hfr^p$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['soundpilgrim.com', 'musiclord.webfactional.com']
 
+ADMINS = (
+    ('John Pugliesi', 'soundpilgrim.com@gmail.com')
+)
 
 # Application definition
 
@@ -64,7 +67,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'soundpilgrim_db',
-        'USER': 'root',
+        'USER': 'musiclord',
         'PASSWORD': 'Vintage69',
     }
 }
@@ -87,7 +90,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/musiclord/webapps/static_media/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    '/var/www/static/',
 )
+
+try:
+   from local_settings import *
+except ImportError, e:
+   pass
