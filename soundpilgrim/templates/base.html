@@ -33,17 +33,20 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<ul id="genres">
-						    <li id="chill"><a href="{% url 'musicblog:chill' %}">Chill</a></li>
-						    <li id="funky"><a href="{% url 'musicblog:funky' %}">Funky</a></li>
-						    <li id="indie"><a href="{% url 'musicblog:indie' %}">Indie &amp; Alternative</a></li>
-						    <li id="rap"><a href="{% url 'musicblog:rap' %}">Rap</a></li>
-						    <li id="party"><a href="{% url 'musicblog:party' %}">Party</a></li>
-						</ul>
-						<br/>
-						<ul id="allMusicNav">
-						    <li id="allMusic"><a href="{% url 'musicblog:all_music' %}">All Music</a></li>
-						</ul>
+					    {% if not is_home %}
+					    	<a href="{% url 'home' %}"><i id="home_button" class="fa fa-home"></i></a><br>
+					    {% endif %}
+					    <ul id="genres">
+						<li id="chill"><a href="{% url 'musicblog:chill' %}">Chill</a></li>
+						<li id="funky"><a href="{% url 'musicblog:funky' %}">Funky</a></li>
+						<li id="indie"><a href="{% url 'musicblog:indie' %}">Indie &amp; Alternative</a></li>
+						<li id="rap"><a href="{% url 'musicblog:rap' %}">Rap</a></li>
+						<li id="party"><a href="{% url 'musicblog:party' %}">Party</a></li>
+					    </ul>
+					    <br/>
+					    <ul id="allMusicNav">
+						<li id="allMusic"><a href="{% url 'musicblog:all_music' %}">All Music</a></li>
+					    </ul>
 					</nav>
 					
 					{% block inner_nav %}
