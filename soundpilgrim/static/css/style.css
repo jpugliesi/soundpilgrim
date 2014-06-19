@@ -12,6 +12,15 @@
 /* Basic                                                                         */
 /*********************************************************************************/
 
+	.preload * {
+	
+	    	-webkit-transition: none !important;
+		-moz-transition: none !important;
+		-ms-transition: none !important;
+		-o-transition: none !important;
+
+	}
+
 	body.paused *
 	{
 		-moz-transition: none;
