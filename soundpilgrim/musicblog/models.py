@@ -9,6 +9,7 @@ class SongCarousel(models.Model):
 
 class Genre(models.Model):
     genre_name = models.CharField('Genre', max_length = 50, null=False)
+    short_name = models.CharField('Short Descriptor', max_length=20, null=False)
 
     def __unicode__(self):
         return self.genre_name

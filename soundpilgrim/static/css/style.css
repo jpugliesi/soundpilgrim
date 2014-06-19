@@ -1376,37 +1376,37 @@
 		
 	}
 
-	.party .genre_color{
+	.party > .genre_color{
 		background-image: url('../images/party.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}
-	.chill .genre_color{
+	.chill > .genre_color{
 		background-image: url('../images/chill.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}
-	.funky .genre_color{
+	.funky > .genre_color{
 		background-image: url('../images/funky.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}
-	.indie .genre_color{
+	.indie > .genre_color{
 		background-image: url('../images/indie.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}
-	.rap .genre_color{
+	.rap > .genre_color{
 		background-image: url('../images/rap.jpg');
 		background-size: 100% auto;
 		height: .5em;
 	}
 
-	.all_music .genre_color{
+	/*.all_music > .genre_color{
 		background-image: url('../images/bluegrey.jpg');
 		background-size: 100% auto;
 		height: .5em;
-	}
+	}*/
 
 	.post_title{
 		/*margin-left: -1em;*/
