@@ -202,7 +202,7 @@
 			$('#continueReading').n33_scrolly();
 
 		// Initialize dropotron
-			$('#nav > ul').dropotron(helios_settings.dropotron);
+			$('#nav > *').dropotron(helios_settings.dropotron);
 
 
 		// Initialize carousels
@@ -355,6 +355,10 @@
 			if(skel.isActive('mobile')){
 				$('.post').removeClass("6u").addClass("12u");
 			}
+
+			if($("html").hasClass("mobile")){
+			    	$("#home_button").text("Home");
+			}	
 
 		// Initialize header
 
