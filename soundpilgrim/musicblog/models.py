@@ -15,7 +15,7 @@ class Genre(models.Model):
         return self.genre_name
 
 class SongPost(models.Model):
-    created_on = models.DateField('Date Created', null=False, editable=True)
+    created_on = models.DateTimeField('Date Created', null=False, editable=True)
     song_title = models.CharField(max_length=200, null=False)
     artist = models.CharField(max_length=200, null=False)
     genre = models.ForeignKey(Genre, null=False)
