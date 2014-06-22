@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block title %}{{ genre }}{% endblock title %}
 
 {% block body_classes %}no-sidebar {{ short_genre }} feedPage{% endblock body_classes %}
@@ -41,5 +43,6 @@
 {% endblock body_content %}
 
 {% block bottom_scripts %}
-<script type="text/javascript" src="sc_api.js"></script>
+<script type="text/javascript" src="{% static "js/sc_api.js" %}"></script>
+<script type="text/javascript" src="{% static "js/continuous_play.js" %}"></script>
 {% endblock bottom_scripts %}
