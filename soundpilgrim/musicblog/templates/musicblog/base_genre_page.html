@@ -1,0 +1,15 @@
+{% load endless %}
+
+{% lazy_paginate 10 recent_songposts %}
+{% for post in recent_songposts %}
+<div class="post {{ post.genre.short_name }} 6u">
+    <h1 class="post_title">{{ post.song_title }}</h1>
+    <h3 class="post_artist">{{ post.artist }}</h3>
+	<div class="genre_color">
+	</div>
+	<div class="post_music 12u">
+		{{ post.soundcloud_url|safe }}
+	</div>	
+</div>	
+{% endfor %}
+{% show_more %}

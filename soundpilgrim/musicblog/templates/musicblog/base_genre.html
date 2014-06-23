@@ -17,19 +17,9 @@
 
 
 {% if recent_songposts %}
-{% for post in recent_songposts %}
-
-<div class="post {{ post.genre.short_name }} 6u">
-    <h1 class="post_title">{{ post.song_title }}</h1>
-    <h3 class="post_artist">{{ post.artist }}</h3>
-	<div class="genre_color">
-	</div>
-	<div class="post_music 12u">
-		{{ post.soundcloud_url|safe }}
-	</div>	
-</div>	
-
-{% endfor %}
+<div class="endless_page_template">
+{% include page_template %}
+</div>
 {% else %}
     <h2>Looks like there aren't any posts...</h2>
 {% endif %}
@@ -43,6 +33,14 @@
 {% endblock body_content %}
 
 {% block bottom_scripts %}
+{{ block.super }}
 <script type="text/javascript" src="{% static "js/sc_api.js" %}"></script>
 <script type="text/javascript" src="{% static "js/continuous_play.js" %}"></script>
+<script src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js"></script>
+<script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
+<script>$.endlessPaginate({
+		paginateOnScroll: true,
+		paginateOnScrollMargin: 200,
+});
+</script>
 {% endblock bottom_scripts %}

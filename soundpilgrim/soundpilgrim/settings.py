@@ -8,6 +8,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -25,6 +26,10 @@ DEBUG = False
 TEMPLATE_DEBUG = False
 
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'django.core.context_processors.request',
+)
 
 ALLOWED_HOSTS = ['soundpilgrim.com', 'musiclord.webfactional.com']
 
@@ -44,6 +49,7 @@ INSTALLED_APPS = (
     'musicblog',
     'quotes',
     'south',
+    'endless_pagination',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,6 +91,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Endless Pagination
+ENDLESS_PAGINATION_LOADING = """<i class="fa fa-circle-o-notch fa-spin"></i>"""
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
