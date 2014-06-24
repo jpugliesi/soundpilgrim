@@ -7,4 +7,5 @@ include
 *.pyc
 .swp
 
+settings.py
 local_settings.py
