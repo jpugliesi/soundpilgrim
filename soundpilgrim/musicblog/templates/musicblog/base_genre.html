@@ -38,9 +38,17 @@
 <script type="text/javascript" src="{% static "js/continuous_play.js" %}"></script>
 <script src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js"></script>
 <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
-<script>$.endlessPaginate({
+<script>
+continuousPlayEval();
+
+$.endlessPaginate({
 		paginateOnScroll: true,
+		paginateOnScrollChunkSize: 6,
 		paginateOnScrollMargin: 200,
+    onCompleted: function(context, fragment) {
+        console.log("Loaded!");
+        continuousPlayEval();
+    },
 });
 </script>
 {% endblock bottom_scripts %}
