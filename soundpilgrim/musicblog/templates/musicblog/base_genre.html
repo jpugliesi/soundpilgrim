@@ -36,6 +36,11 @@
 {{ block.super }}
 <script type="text/javascript" src="{% static "js/sc_api.js" %}"></script>
 <script type="text/javascript" src="{% static "js/continuous_play.js" %}"></script>
+<script>
+  new_widgets = 0;
+  new_index = 0;
+  continuousPlayEval();
+</script>
 <script src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js"></script>
 <script src="{{ STATIC_URL }}endless_pagination/js/endless-pagination.js"></script>
 <script>

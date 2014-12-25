@@ -1,5 +1,4 @@
 function continuousPlayEval(){
-	console.log("This is a test");
 	var tracks = [];
 	var widgets = $('iframe');
 	var num_widgets = widgets.length;
@@ -24,3 +23,4 @@ function continuousPlayEval(){
 		}
 	 });
 }
+
